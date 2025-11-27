@@ -28,82 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Form Handling
     // ================================
 
-    const checkupForm = document.getElementById('checkupForm');
-
-    if (checkupForm) {
-        checkupForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Gather form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                cards: document.getElementById('cards').value,
-                points: document.getElementById('points').value,
-                travel: document.getElementById('travel').value
-            };
-
-            // For now, log the data and show a success message
-            // Replace this with your actual form submission logic
-            // Options: 
-            //   - Formspree (formspree.io) - easy email forwarding
-            //   - Netlify Forms - if hosting on Netlify
-            //   - Custom backend endpoint
-            //   - Google Forms integration
-
-            console.log('Form submitted:', formData);
-
-            // Show success message
-            showFormSuccess();
-        });
-    }
-
-    function showFormSuccess() {
-        const form = document.getElementById('checkupForm');
-        const successMessage = document.createElement('div');
-        successMessage.className = 'form-success';
-        successMessage.innerHTML = `
-            <div class="success-icon">✓</div>
-            <h3>Thanks! We'll be in touch soon.</h3>
-            <p>Check your email for your free points checkup within 24 hours.</p>
-        `;
-
-        // Add success styles
-        successMessage.style.cssText = `
-            text-align: center;
-            padding: 3rem 2rem;
-        `;
-
-        const successIcon = successMessage.querySelector('.success-icon');
-        successIcon.style.cssText = `
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 64px;
-            height: 64px;
-            background: #1a5f4a;
-            color: white;
-            font-size: 2rem;
-            border-radius: 50%;
-            margin-bottom: 1.5rem;
-        `;
-
-        const h3 = successMessage.querySelector('h3');
-        h3.style.cssText = `
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #0a0a0a;
-        `;
-
-        const p = successMessage.querySelector('p');
-        p.style.cssText = `
-            color: #666;
-            margin-bottom: 0;
-        `;
-
-        // Replace form with success message
-        form.parentNode.replaceChild(successMessage, form);
-    }
+    // Form submission is handled by Formspree
+    // No JavaScript needed - the form posts directly to Formspree
 
     // ================================
     // Navigation Background on Scroll
